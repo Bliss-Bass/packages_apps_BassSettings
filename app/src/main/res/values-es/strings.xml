@@ -19,6 +19,8 @@
     <string name="setting_is_in_desktop_mode_description">Activa el modo de escritorio para el lanzador.</string>
 
     <!-- WindowManager Settings -->
+    <string name="setting_force_desktop_mode_on_external_displays_name">Forzar Modo Escritorio en Pantallas Externas</string>
+    <string name="setting_force_desktop_mode_on_external_displays_description">Fuerza a todas las pantallas externas a usar el modo de escritorio.</string>
     <string name="setting_force_acms_displays_name">Forzar Cambio de Modo de Contenido</string>
     <string name="setting_force_acms_displays_description">Fuerza el indicador de cambio de modo de contenido en las pantallas.</string>
     <string name="setting_disable_external_presentation_displays_name">Desactivar Presentación Externa</string>

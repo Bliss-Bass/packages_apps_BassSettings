@@ -36,6 +36,12 @@
     </category>
     <category name="WindowManager">
         <setting
+            id="force_desktop_mode_on_external_displays"
+            name="@string/setting_force_desktop_mode_on_external_displays_name"
+            description="@string/setting_force_desktop_mode_on_external_displays_description"
+            type="global"
+            defaultValue="0" />
+        <setting
             id="persist.force.acms_displays"
             name="@string/setting_force_acms_displays_name"
             description="@string/setting_force_acms_displays_description"

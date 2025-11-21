@@ -18,6 +18,8 @@
     <string name="setting_is_in_desktop_mode_description">Enables desktop mode for the launcher.</string>
 
     <!-- WindowManager Settings -->
+    <string name="setting_force_desktop_mode_on_external_displays_name">Force Desktop Mode on External Displays</string>
+    <string name="setting_force_desktop_mode_on_external_displays_description">Forces all external displays to use desktop mode.</string>
     <string name="setting_force_acms_displays_name">Force Content Mode Switch</string>
     <string name="setting_force_acms_displays_description">Forces the content mode switch display flag on displays.</string>
     <string name="setting_disable_external_presentation_displays_name">Disable External Presentation</string>
