@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ajustes de Bass</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="menu_settings">Ajustes</string>
+
+    <!-- Bliss Settings -->
+    <string name="setting_disable_primary_taskbar_name">Desactivar Barra de Tareas Principal</string>
+    <string name="setting_disable_primary_taskbar_description">Desactiva la barra de tareas principal en la parte inferior de la pantalla.</string>
+    <string name="setting_disable_taskbar_name">Desactivar Barra de Tareas</string>
+    <string name="setting_disable_taskbar_description">Desactiva la barra de tareas por completo.</string>
+    <string name="setting_disable_secondary_taskbar_name">Desactivar Barra de Tareas Secundaria</string>
+    <string name="setting_disable_secondary_taskbar_description">Desactiva la barra de tareas secundaria en la parte superior de la pantalla.</string>
+
+    <!-- Launcher Settings -->
+    <string name="setting_pin_taskbar_name">Anclar Barra de Tareas</string>
+    <string name="setting_pin_taskbar_description">Ancla la barra de tareas a la parte inferior de la pantalla.</string>
+    <string name="setting_is_in_desktop_mode_name">Está en Modo Escritorio</string>
+    <string name="setting_is_in_desktop_mode_description">Activa el modo de escritorio para el lanzador.</string>
+
+    <!-- WindowManager Settings -->
+    <string name="setting_force_freeform_windowing_mode_name">Forzar Modo de Ventana de Forma Libre</string>
+    <string name="setting_force_freeform_windowing_mode_description">Fuerza a todas las aplicaciones a abrirse en ventanas de forma libre.</string>
+    <string name="setting_force_fullscreen_windowing_mode_name">Forzar Modo de Ventana de Pantalla Completa</string>
+    <string name="setting_force_fullscreen_windowing_mode_description">Fuerza a todas las aplicaciones a abrirse en pantalla completa.</string>
+    <string name="setting_force_external_presentation_displays_name">Forzar Pantallas de Presentación Externas</string>
+    <string name="setting_force_external_presentation_displays_description">Fuerza a que las pantallas externas sean tratadas como pantallas de presentación.</string>
+    <string name="setting_force_external_trusted_displays_name">Forzar Pantallas de Confianza Externas</string>
+    <string name="setting_force_external_trusted_displays_description">Fuerza a que las pantallas externas sean tratadas como pantallas de confianza.</string>
+    <string name="setting_force_secure_displays_name">Forzar Pantallas Seguras</string>
+    <string name="setting_force_secure_displays_description">Fuerza a que las pantallas se marquen como seguras.</string>
+    <string name="setting_force_supports_protected_displays_name">Forzar Soporte para Pantallas Protegidas</string>
+    <string name="setting_force_supports_protected_displays_description">Fuerza a que las pantallas soporten contenido protegido.</string>
+    <string name="setting_force_private_displays_name">Forzar Pantallas Privadas</string>
+    <string name="setting_force_private_displays_description">Fuerza a que las pantallas se marquen como privadas.</string>
+    <string name="setting_force_presentation_displays_name">Forzar Pantallas de Presentación</string>
+    <string name="setting_force_presentation_displays_description">Fuerza a que las pantallas sean tratadas como pantallas de presentación.</string>
+    <string name="setting_force_scaling_disabled_displays_name">Forzar Pantallas con Escalado Desactivado</string>
+    <string name="setting_force_scaling_disabled_displays_description">Desactiva el escalado para las pantallas.</string>
+    <string name="setting_force_cswik_displays_name">Forzar Pantallas CSWIK</string>
+    <string name="setting_force_cswik_displays_description">Fuerza a que las pantallas usen CSWIK.</string>
+    <string name="setting_force_sssd_displays_name">Forzar Pantallas SSSD</string>
+    <string name="setting_force_sssd_displays_description">Fuerza a que las pantallas usen SSSD.</string>
+    <string name="setting_force_trusted_displays_name">Forzar Pantallas de Confianza</string>
+    <string name="setting_force_trusted_displays_description">Fuerza a que las pantallas sean tratadas como pantallas de confianza.</string>
+    <string name="setting_force_rear_displays_name">Forzar Pantallas Traseras</string>
+    <string name="setting_force_rear_displays_description">Fuerza a que las pantallas sean tratadas como pantallas traseras.</string>
+    <string name="setting_hide_navbar_window_name">Ocultar Ventana de la Barra de Navegación</string>
+    <string name="setting_hide_navbar_window_description">Oculta la ventana de la barra de navegación.</string>
+    <string name="setting_desktop_experience_devopts_name">Opciones de Desarrollador para Experiencia de Escritorio</string>
+    <string name="setting_desktop_experience_devopts_description">Activa las opciones de desarrollador para la experiencia de escritorio.</string>
+    <string name="setting_desktop_mode_enforce_device_restrictions_name">Aplicar Restricciones de Dispositivo en Modo Escritorio</string>
+    <string name="setting_desktop_mode_enforce_device_restrictions_description">Aplica las restricciones del dispositivo en el modo de escritorio.</string>
+    <string name="setting_force_desktop_first_on_default_display_for_testing_name">Forzar Escritorio Primero en Pantalla Predeterminada para Pruebas</string>
+    <string name="setting_force_desktop_first_on_default_display_for_testing_description">Fuerza que el modo de escritorio esté activado por defecto para pruebas.</string>
+
+    <!-- Other Settings -->
+    <string name="setting_secure_overlay_settings_name">Ajustes de Superposición Segura</string>
+    <string name="setting_secure_overlay_settings_description">Controla los ajustes de superposición segura.</string>
+    <string name="setting_alert_window_bypass_low_ram_name">Omitir RAM Baja para Ventanas de Alerta</string>
+    <string name="setting_alert_window_bypass_low_ram_description">Permite que las ventanas de alerta omitan las restricciones de RAM baja.</string>
+</resources>

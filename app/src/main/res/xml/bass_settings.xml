@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <category name="Bliss">
+        <setting
+            id="persist.bliss.disable_primary_taskbar"
+            name="@string/setting_disable_primary_taskbar_name"
+            description="@string/setting_disable_primary_taskbar_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.bliss.disable_taskbar"
+            name="@string/setting_disable_taskbar_name"
+            description="@string/setting_disable_taskbar_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.bliss.disable_secondary_taskbar"
+            name="@string/setting_disable_secondary_taskbar_name"
+            description="@string/setting_disable_secondary_taskbar_description"
+            type="system_property"
+            defaultValue="0" />
+    </category>
+    <category name="Launcher">
+        <setting
+            id="persist.launcher3.pin_taskbar"
+            name="@string/setting_pin_taskbar_name"
+            description="@string/setting_pin_taskbar_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.launcher3.is_in_desktop_mode"
+            name="@string/setting_is_in_desktop_mode_name"
+            description="@string/setting_is_in_desktop_mode_description"
+            type="system_property"
+            defaultValue="0" />
+    </category>
+    <category name="WindowManager">
+        <setting
+            id="persist.force.freeform_windowing_mode"
+            name="@string/setting_force_freeform_windowing_mode_name"
+            description="@string/setting_force_freeform_windowing_mode_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.force.fullscreen_windowing_mode"
+            name="@string/setting_force_fullscreen_windowing_mode_name"
+            description="@string/setting_force_fullscreen_windowing_mode_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.force.external_presentation_displays"
+            name="@string/setting_force_external_presentation_displays_name"
+            description="@string/setting_force_external_presentation_displays_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.force.external_trusted_displays"
+            name="@string/setting_force_external_trusted_displays_name"
+            description="@string/setting_force_external_trusted_displays_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.force.secure_displays"
+            name="@string/setting_force_secure_displays_name"
+            description="@string/setting_force_secure_displays_description"
+            type="system_property"
+            defaultValue="1" />
+        <setting
+            id="persist.force.supports_protected_displays"
+            name="@string/setting_force_supports_protected_displays_name"
+            description="@string/setting_force_supports_protected_displays_description"
+            type="system_property"
+            defaultValue="1" />
+        <setting
+            id="persist.force.private_displays"
+            name="@string/setting_force_private_displays_name"
+            description="@string/setting_force_private_displays_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.force.presentation_displays"
+            name="@string/setting_force_presentation_displays_name"
+            description="@string/setting_force_presentation_displays_description"
+            type="system_property"
+            defaultValue="1" />
+        <setting
+            id="persist.force.scaling_disabled_displays"
+            name="@string/setting_force_scaling_disabled_displays_name"
+            description="@string/setting_force_scaling_disabled_displays_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.force.cswik_displays"
+            name="@string/setting_force_cswik_displays_name"
+            description="@string/setting_force_cswik_displays_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.force.sssd_displays"
+            name="@string/setting_force_sssd_displays_name"
+            description="@string/setting_force_sssd_displays_description"
+            type="system_property"
+            defaultValue="1" />
+        <setting
+            id="persist.force.trusted_displays"
+            name="@string/setting_force_trusted_displays_name"
+            description="@string/setting_force_trusted_displays_description"
+            type="system_property"
+            defaultValue="1" />
+        <setting
+            id="persist.force.rear_displays"
+            name="@string/setting_force_rear_displays_name"
+            description="@string/setting_force_rear_displays_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
+            id="persist.wm.debug.hide_navbar_window"
+            name="@string/setting_hide_navbar_window_name"
+            description="@string/setting_hide_navbar_window_description"
+            type="system_property"
+            defaultValue="true" />
+        <setting
+            id="persist.wm.debug.desktop_experience_devopts"
+            name="@string/setting_desktop_experience_devopts_name"
+            description="@string/setting_desktop_experience_devopts_description"
+            type="system_property"
+            defaultValue="1" />
+        <setting
+            id="persist.wm.debug.desktop_mode_enforce_device_restrictions"
+            name="@string/setting_desktop_mode_enforce_device_restrictions_name"
+            description="@string/setting_desktop_mode_enforce_device_restrictions_description"
+            type="system_property"
+            defaultValue="false" />
+        <setting
+            id="persist.force.desktop_first_on_default_display_for_testing"
+            name="@string/setting_force_desktop_first_on_default_display_for_testing_name"
+            description="@string/setting_force_desktop_first_on_default_display_for_testing_description"
+            type="system_property"
+            defaultValue="true" />
+    </category>
+    <category name="Other">
+        <setting
+            id="secure_overlay_settings"
+            name="@string/setting_secure_overlay_settings_name"
+            description="@string/setting_secure_overlay_settings_description"
+            type="secure"
+            defaultValue="1" />
+        <setting
+            id="alert_window_bypass_low_ram"
+            name="@string/setting_alert_window_bypass_low_ram_name"
+            description="@string/setting_alert_window_bypass_low_ram_description"
+            type="system"
+            defaultValue="1" />
+    </category>
+</settings>

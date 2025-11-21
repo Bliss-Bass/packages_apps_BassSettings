@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">BassSettings</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_settings">Settings</string>
+
+    <!-- Bliss Settings -->
+    <string name="setting_disable_primary_taskbar_name">Disable Primary Taskbar</string>
+    <string name="setting_disable_primary_taskbar_description">Disables the primary taskbar on the bottom of the screen.</string>
+    <string name="setting_disable_taskbar_name">Disable Taskbar</string>
+    <string name="setting_disable_taskbar_description">Disables the taskbar entirely.</string>
+    <string name="setting_disable_secondary_taskbar_name">Disable Secondary Taskbar</string>
+    <string name="setting_disable_secondary_taskbar_description">Disables the secondary taskbar on the top of the screen.</string>
+
+    <!-- Launcher Settings -->
+    <string name="setting_pin_taskbar_name">Pin Taskbar</string>
+    <string name="setting_pin_taskbar_description">Pins the taskbar to the bottom of the screen.</string>
+    <string name="setting_is_in_desktop_mode_name">Is In Desktop Mode</string>
+    <string name="setting_is_in_desktop_mode_description">Enables desktop mode for the launcher.</string>
+
+    <!-- WindowManager Settings -->
+    <string name="setting_force_freeform_windowing_mode_name">Force Freeform Windowing Mode</string>
+    <string name="setting_force_freeform_windowing_mode_description">Forces all apps to open in freeform windows.</string>
+    <string name="setting_force_fullscreen_windowing_mode_name">Force Fullscreen Windowing Mode</string>
+    <string name="setting_force_fullscreen_windowing_mode_description">Forces all apps to open in fullscreen.</string>
+    <string name="setting_force_external_presentation_displays_name">Force External Presentation Displays</string>
+    <string name="setting_force_external_presentation_displays_description">Forces external displays to be treated as presentation displays.</string>
+    <string name="setting_force_external_trusted_displays_name">Force External Trusted Displays</string>
+    <string name="setting_force_external_trusted_displays_description">Forces external displays to be treated as trusted displays.</string>
+    <string name="setting_force_secure_displays_name">Force Secure Displays</string>
+    <string name="setting_force_secure_displays_description">Forces displays to be marked as secure.</string>
+    <string name="setting_force_supports_protected_displays_name">Force Supports Protected Displays</string>
+    <string name="setting_force_supports_protected_displays_description">Forces displays to support protected content.</string>
+    <string name="setting_force_private_displays_name">Force Private Displays</string>
+    <string name="setting_force_private_displays_description">Forces displays to be marked as private.</string>
+    <string name="setting_force_presentation_displays_name">Force Presentation Displays</string>
+    <string name="setting_force_presentation_displays_description">Forces displays to be treated as presentation displays.</string>
+    <string name="setting_force_scaling_disabled_displays_name">Force Scaling Disabled Displays</string>
+    <string name="setting_force_scaling_disabled_displays_description">Disables scaling for displays.</string>
+    <string name="setting_force_cswik_displays_name">Force CSWIK Displays</string>
+    <string name="setting_force_cswik_displays_description">Forces displays to use CSWIK.</string>
+    <string name="setting_force_sssd_displays_name">Force SSSD Displays</string>
+    <string name="setting_force_sssd_displays_description">Forces displays to use SSSD.</string>
+    <string name="setting_force_trusted_displays_name">Force Trusted Displays</string>
+    <string name="setting_force_trusted_displays_description">Forces displays to be treated as trusted displays.</string>
+    <string name="setting_force_rear_displays_name">Force Rear Displays</string>
+    <string name="setting_force_rear_displays_description">Forces displays to be treated as rear displays.</string>
+    <string name="setting_hide_navbar_window_name">Hide Navbar Window</string>
+    <string name="setting_hide_navbar_window_description">Hides the navigation bar window.</string>
+    <string name="setting_desktop_experience_devopts_name">Desktop Experience Devopts</string>
+    <string name="setting_desktop_experience_devopts_description">Enables desktop experience developer options.</string>
+    <string name="setting_desktop_mode_enforce_device_restrictions_name">Desktop Mode Enforce Device Restrictions</string>
+    <string name="setting_desktop_mode_enforce_device_restrictions_description">Enforces device restrictions in desktop mode.</string>
+    <string name="setting_force_desktop_first_on_default_display_for_testing_name">Force Desktop First On Default Display For Testing</string>
+    <string name="setting_force_desktop_first_on_default_display_for_testing_description">Forces desktop mode to be on by default for testing.</string>
+
+    <!-- Other Settings -->
+    <string name="setting_secure_overlay_settings_name">Secure Overlay Settings</string>
+    <string name="setting_secure_overlay_settings_description">Controls secure overlay settings.</string>
+    <string name="setting_alert_window_bypass_low_ram_name">Alert Window Bypass Low RAM</string>
+    <string name="setting_alert_window_bypass_low_ram_description">Allows alert windows to bypass low RAM restrictions.</string>
+</resources>
