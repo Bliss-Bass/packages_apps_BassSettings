@@ -18,6 +18,8 @@
     <string name="setting_is_in_desktop_mode_description">Enables desktop mode for the launcher.</string>
 
     <!-- WindowManager Settings -->
+    <string name="setting_disable_external_presentation_displays_name">Disable External Presentation</string>
+    <string name="setting_disable_external_presentation_displays_description">Disables external displays from being automatically set as presentation displays.</string>
     <string name="setting_force_freeform_windowing_mode_name">Force Freeform Windowing Mode</string>
     <string name="setting_force_freeform_windowing_mode_description">Forces all apps to open in freeform windows.</string>
     <string name="setting_force_fullscreen_windowing_mode_name">Force Fullscreen Windowing Mode</string>

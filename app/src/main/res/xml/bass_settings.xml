@@ -36,6 +36,12 @@
     </category>
     <category name="WindowManager">
         <setting
+            id="persist.force.dep_displays"
+            name="@string/setting_disable_external_presentation_displays_name"
+            description="@string/setting_disable_external_presentation_displays_description"
+            type="system_property"
+            defaultValue="0" />
+        <setting
             id="persist.force.freeform_windowing_mode"
             name="@string/setting_force_freeform_windowing_mode_name"
             description="@string/setting_force_freeform_windowing_mode_description"

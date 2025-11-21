@@ -19,6 +19,8 @@
     <string name="setting_is_in_desktop_mode_description">Activa el modo de escritorio para el lanzador.</string>
 
     <!-- WindowManager Settings -->
+    <string name="setting_disable_external_presentation_displays_name">Desactivar Presentación Externa</string>
+    <string name="setting_disable_external_presentation_displays_description">Desactiva que las pantallas externas se establezcan automáticamente como pantallas de presentación.</string>
     <string name="setting_force_freeform_windowing_mode_name">Forzar Modo de Ventana de Forma Libre</string>
     <string name="setting_force_freeform_windowing_mode_description">Fuerza a todas las aplicaciones a abrirse en ventanas de forma libre.</string>
     <string name="setting_force_fullscreen_windowing_mode_name">Forzar Modo de Ventana de Pantalla Completa</string>
