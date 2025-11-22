@@ -25,11 +25,15 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         navController = navHostFragment.navController
 
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        // Pass an empty set of top-level destinations so that the Up button is always shown,
+        // which is the correct behavior for a settings screen.
+        appBarConfiguration = AppBarConfiguration(setOf())
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
+        // Let the NavController handle the Up button.
+        // If it can't (i.e., we're at the start), call the super method which will finish the activity.
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
