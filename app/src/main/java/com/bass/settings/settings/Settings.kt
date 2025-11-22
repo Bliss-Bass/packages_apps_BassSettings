@@ -20,6 +20,6 @@ enum class SettingType {
 enum class SettingCategory {
     BLISS,
     LAUNCHER,
-    WINDOW_MANAGER,
+    WINDOWMANAGER,
     OTHER
 }
