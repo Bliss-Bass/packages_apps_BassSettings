@@ -40,16 +40,26 @@ object SettingsManager {
         }
     }
 
-    fun setSetting(contentResolver: ContentResolver, type: SettingType, key: String, value: Any) {
+    fun setSetting(contentResolver: ContentResolver, type: SettingType, key: String, value: Any, defaultValue: Any): Boolean {
         val valueStr = when (value) {
             is Boolean -> if (value) "1" else "0"
             else -> value.toString()
         }
-        when (type) {
-            SettingType.SECURE -> Settings.Secure.putString(contentResolver, key, valueStr)
-            SettingType.SYSTEM -> Settings.System.putString(contentResolver, key, valueStr)
-            SettingType.GLOBAL -> Settings.Global.putString(contentResolver, key, valueStr)
-            SettingType.SYSTEM_PROPERTY -> setSystemProperty?.invoke(null, key, valueStr)
+
+        try {
+            when (type) {
+                SettingType.SECURE -> Settings.Secure.putString(contentResolver, key, valueStr)
+                SettingType.SYSTEM -> Settings.System.putString(contentResolver, key, valueStr)
+                SettingType.GLOBAL -> Settings.Global.putString(contentResolver, key, valueStr)
+                SettingType.SYSTEM_PROPERTY -> setSystemProperty?.invoke(null, key, valueStr)
+            }
+        } catch (e: SecurityException) {
+            // If the set fails due to a security exception, we know it failed.
+            return false
         }
+
+        // After setting, read the value back to verify it was set correctly.
+        val readBackValue = getSetting(contentResolver, type, key, defaultValue)
+        return value == readBackValue
     }
 }
