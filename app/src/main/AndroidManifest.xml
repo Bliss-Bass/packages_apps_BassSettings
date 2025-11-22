@@ -25,12 +25,7 @@
             android:resizeableActivity="true"
             android:theme="@style/Theme.BassSettings.NoActionBar"
             tools:targetApi="24">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            
             <!-- Intent filter to appear in Settings -->
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
