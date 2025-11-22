@@ -2,7 +2,6 @@ package com.bass.settings.settings
 
 import android.content.ContentResolver
 import android.provider.Settings
-import java.lang.reflect.Method
 
 object SettingsManager {
 
@@ -23,27 +22,34 @@ object SettingsManager {
     }
 
     fun getSetting(contentResolver: ContentResolver, type: SettingType, key: String, defaultValue: Any): Any {
-        return when (type) {
-            SettingType.SECURE -> Settings.Secure.getString(contentResolver, key) ?: defaultValue
-            SettingType.SYSTEM -> Settings.System.getString(contentResolver, key) ?: defaultValue
-            SettingType.GLOBAL -> Settings.Global.getString(contentResolver, key) ?: defaultValue
-            SettingType.SYSTEM_PROPERTY -> {
-                val value = getSystemProperty?.invoke(null, key, defaultValue.toString()) as? String
-                when (defaultValue) {
-                    is Boolean -> value?.toBoolean() ?: defaultValue
-                    is Int -> value?.toIntOrNull() ?: defaultValue
-                    else -> value ?: defaultValue
-                }
-            }
+        val valueStr: String? = when (type) {
+            SettingType.SECURE -> Settings.Secure.getString(contentResolver, key)
+            SettingType.SYSTEM -> Settings.System.getString(contentResolver, key)
+            SettingType.GLOBAL -> Settings.Global.getString(contentResolver, key)
+            SettingType.SYSTEM_PROPERTY -> getSystemProperty?.invoke(null, key, null) as? String
+        }
+
+        if (valueStr == null) {
+            return defaultValue
+        }
+
+        return when (defaultValue) {
+            is Boolean -> valueStr == "1" || valueStr.equals("true", ignoreCase = true)
+            is Int -> valueStr.toIntOrNull() ?: defaultValue
+            else -> valueStr
         }
     }
 
     fun setSetting(contentResolver: ContentResolver, type: SettingType, key: String, value: Any) {
+        val valueStr = when (value) {
+            is Boolean -> if (value) "1" else "0"
+            else -> value.toString()
+        }
         when (type) {
-            SettingType.SECURE -> Settings.Secure.putString(contentResolver, key, value.toString())
-            SettingType.SYSTEM -> Settings.System.putString(contentResolver, key, value.toString())
-            SettingType.GLOBAL -> Settings.Global.putString(contentResolver, key, value.toString())
-            SettingType.SYSTEM_PROPERTY -> setSystemProperty?.invoke(null, key, value.toString())
+            SettingType.SECURE -> Settings.Secure.putString(contentResolver, key, valueStr)
+            SettingType.SYSTEM -> Settings.System.putString(contentResolver, key, valueStr)
+            SettingType.GLOBAL -> Settings.Global.putString(contentResolver, key, valueStr)
+            SettingType.SYSTEM_PROPERTY -> setSystemProperty?.invoke(null, key, valueStr)
         }
     }
 }
