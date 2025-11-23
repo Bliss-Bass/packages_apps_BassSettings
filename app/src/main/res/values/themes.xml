@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.BassSettings" parent="Theme.DeviceDefault.DayNight.NoActionBar">
-        <!-- All colors and styles are inherited from the system theme -->
+    <style name="Theme.BassSettings" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- All colors and styles are inherited from the Material3 theme -->
     </style>
 
     <style name="Theme.BassSettings.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -29,7 +29,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:resizeableActivity="true"
-            android:theme="@style/Theme.BassSettings.NoActionBar"
+            android:theme="@style/Theme.BassSettings"
             tools:targetApi="24">
             
             <!-- Intent filter to appear in Settings -->

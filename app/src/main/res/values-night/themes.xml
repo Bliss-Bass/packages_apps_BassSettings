@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme for dark mode. -->
-    <style name="Theme.BassSettings" parent="Theme.DeviceDefault.DayNight.NoActionBar">
-        <!-- All colors and styles are inherited from the system theme -->
+    <style name="Theme.BassSettings" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- All colors and styles are inherited from the Material3 theme -->
     </style>
 </resources>
