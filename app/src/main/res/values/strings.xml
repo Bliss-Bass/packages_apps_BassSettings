@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">BassSettings</string>
+    <string name="app_name">Bass Settings</string>
+    <string name="app_summary">Configure various options and UI elements</string>
     <string name="action_settings">Settings</string>
     <string name="menu_settings">Settings</string>
+
+    <!-- Restart Menu -->
+    <string name="restart_systemui">Restart SystemUI</string>
+    <string name="restart_launcher">Restart Launcher</string>
 
     <!-- Bliss Settings -->
     <string name="setting_disable_primary_taskbar_name">Disable Primary Taskbar</string>

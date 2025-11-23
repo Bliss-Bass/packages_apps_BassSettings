@@ -1,6 +1,10 @@
 package com.bass.settings
 
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
@@ -25,15 +29,39 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         navController = navHostFragment.navController
 
-        // Pass an empty set of top-level destinations so that the Up button is always shown,
-        // which is the correct behavior for a settings screen.
-        appBarConfiguration = AppBarConfiguration(setOf())
+        appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_restart_systemui -> {
+                Runtime.getRuntime().exec("pkill com.android.systemui")
+                true
+            }
+            R.id.action_restart_launcher -> {
+                // Find the default launcher package and kill it
+                val intent = Intent(Intent.ACTION_MAIN)
+                intent.addCategory(Intent.CATEGORY_HOME)
+                val resolveInfo = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
+                if (resolveInfo?.activityInfo?.packageName != null) {
+                    Runtime.getRuntime().exec("pkill ${resolveInfo.activityInfo.packageName}")
+                }
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onSupportNavigateUp(): Boolean {
-        // Let the NavController handle the Up button.
-        // If it can't (i.e., we're at the start), call the super method which will finish the activity.
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        if (!navController.navigateUp(appBarConfiguration)) {
+            finish()
+        }
+        return true
     }
 }
