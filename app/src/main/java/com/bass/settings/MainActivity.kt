@@ -42,18 +42,18 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_restart_systemui -> {
-                Runtime.getRuntime().exec("am force-stop com.android.systemui")
+                // This is disabled in the menu XML for now
                 true
             }
             R.id.action_restart_launcher -> {
-                // Find the default launcher package and kill it
                 val intent = Intent(Intent.ACTION_MAIN)
                 intent.addCategory(Intent.CATEGORY_HOME)
                 val resolveInfo = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
                 if (resolveInfo != null) {
                     val launcherPackage = resolveInfo.activityInfo.packageName
                     if (launcherPackage != null) {
-                        Runtime.getRuntime().exec("am force-stop $launcherPackage")
+                        val command = "sh -c \"am force-stop $launcherPackage && am start -a android.intent.action.MAIN -c android.intent.category.HOME -f 0x10008000\""
+                        Runtime.getRuntime().exec(command)
                     }
                 }
                 true
@@ -63,9 +63,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        // Try to navigate up in the navigation graph. If that fails (we are at the top
-        // of the stack), then finish the activity. This makes the Up button behave
-        // like the Back button, which is correct for a settings activity.
         if (!navController.navigateUp(appBarConfiguration)) {
             finish()
         }

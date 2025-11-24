@@ -5,6 +5,7 @@
     <item
         android:id="@+id/action_restart_systemui"
         android:title="@string/restart_systemui"
+        android:visible="false"
         app:showAsAction="never" />
 
     <item
