@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -24,34 +23,34 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val settingsAdapter = SettingsAdapter(viewModel.displayableItems, viewModel)
+        val settingsAdapter = SettingsAdapter {
+            settingItem, isChecked -> viewModel.updateSetting(settingItem.setting.id, isChecked)
+        }
+        
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = settingsAdapter
+            // To prevent the "blinking" issue when an item updates
+            itemAnimator = null 
         }
 
-        // Observe the update result event from the ViewModel
+        // Observe the UI state from the ViewModel
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.updateResultEvent.collect { result ->
-                    if (!result.success) {
-                        // If the setting update failed, show a toast and revert the switch state
-                        Toast.makeText(context, "Failed to update setting", Toast.LENGTH_SHORT).show()
-
-                        // Find the index of the failed setting and notify the adapter to re-bind it
-                        val index = viewModel.displayableItems.indexOfFirst {
-                            it is SettingItem && it.setting.id == result.setting.id
+                viewModel.uiState.collect { uiState ->
+                    when (uiState) {
+                        is SettingsUiState.Loading -> {
+                            // Optionally, show a loading spinner for the whole screen
                         }
-                        if (index != -1) {
-                            settingsAdapter.notifyItemChanged(index)
+                        is SettingsUiState.Success -> {
+                            settingsAdapter.submitList(uiState.items)
                         }
                     }
                 }
