@@ -1,9 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.BassSettings" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Forcing the color scheme to disable Material You dynamic colors -->
+
+        <!-- Primary brand color, used for the app bar background. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Text and icon color that appears on top of the primary color. -->
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Surface color for components like Cards, Menus, and the main window background -->
+        <item name="colorSurface">@color/colorPrimary</item>
+
+        <!-- Text color that appears on top of the surface color. -->
+        <item name="colorOnSurface">@color/white</item>
     </style>
 
     <style name="Theme.BassSettings.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
