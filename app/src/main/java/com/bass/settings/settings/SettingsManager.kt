@@ -29,14 +29,25 @@ object SettingsManager {
             SettingType.SYSTEM_PROPERTY -> getSystemProperty?.invoke(null, key, null) as? String
         }
 
-        if (valueStr == null) {
-            return defaultValue
+        // Instead of relying on the parsed type of defaultValue, which can be a String,
+        // determine the intended type from the content of the defaultValue.
+        val isBoolean = defaultValue.toString().equals("true", ignoreCase = true) || defaultValue.toString().equals("false", ignoreCase = true)
+
+        val actualDefaultValue = if (isBoolean) {
+            defaultValue.toString().toBoolean()
+        } else {
+            defaultValue.toString().toIntOrNull() ?: 0
         }
 
-        return when (defaultValue) {
-            is Boolean -> valueStr == "1" || valueStr.equals("true", ignoreCase = true)
-            is Int -> valueStr.toIntOrNull() ?: defaultValue
-            else -> valueStr
+        if (valueStr.isNullOrEmpty()) {
+            return actualDefaultValue
+        }
+
+        // Return a value of the same type as our parsed default value
+        return if (isBoolean) {
+            valueStr == "1" || valueStr.equals("true", ignoreCase = true)
+        } else {
+            valueStr.toIntOrNull() ?: actualDefaultValue
         }
     }
 

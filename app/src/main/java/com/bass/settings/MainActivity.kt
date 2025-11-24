@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         navController = navHostFragment.navController
 
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        // Pass an empty set to the AppBarConfiguration so that the Up button is always shown
+        appBarConfiguration = AppBarConfiguration.Builder(setOf()).build()
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
@@ -49,8 +50,11 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_MAIN)
                 intent.addCategory(Intent.CATEGORY_HOME)
                 val resolveInfo = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
-                if (resolveInfo?.activityInfo?.packageName != null) {
-                    Runtime.getRuntime().exec("pkill ${resolveInfo.activityInfo.packageName}")
+                if (resolveInfo != null) {
+                    val launcherPackage = resolveInfo.activityInfo.packageName
+                    if (launcherPackage != null) {
+                        Runtime.getRuntime().exec("pkill $launcherPackage")
+                    }
                 }
                 true
             }
@@ -59,6 +63,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
+        // Try to navigate up in the navigation graph. If that fails (we are at the top
+        // of the stack), then finish the activity. This makes the Up button behave
+        // like the Back button, which is correct for a settings activity.
         if (!navController.navigateUp(appBarConfiguration)) {
             finish()
         }
