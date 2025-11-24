@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_restart_systemui -> {
-                Runtime.getRuntime().exec("pkill com.android.systemui")
+                Runtime.getRuntime().exec("am force-stop com.android.systemui")
                 true
             }
             R.id.action_restart_launcher -> {
