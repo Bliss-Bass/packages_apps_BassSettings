@@ -2,6 +2,8 @@ package com.bass.settings.settings
 
 import android.content.ContentResolver
 import android.provider.Settings
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 object SettingsManager {
 
@@ -21,41 +23,25 @@ object SettingsManager {
         systemPropertiesClass?.getMethod("set", String::class.java, String::class.java)
     }
 
-    fun getSetting(contentResolver: ContentResolver, type: SettingType, key: String, defaultValue: Any): Any {
+    /**
+     * Gets the value of a setting, always returning a Boolean.
+     * It interprets "1" or "true" as true, and anything else (including null) as false.
+     */
+    fun getSetting(contentResolver: ContentResolver, type: SettingType, key: String): Boolean {
         val valueStr: String? = when (type) {
             SettingType.SECURE -> Settings.Secure.getString(contentResolver, key)
             SettingType.SYSTEM -> Settings.System.getString(contentResolver, key)
             SettingType.GLOBAL -> Settings.Global.getString(contentResolver, key)
             SettingType.SYSTEM_PROPERTY -> getSystemProperty?.invoke(null, key, null) as? String
         }
-
-        // Instead of relying on the parsed type of defaultValue, which can be a String,
-        // determine the intended type from the content of the defaultValue.
-        val isBoolean = defaultValue.toString().equals("true", ignoreCase = true) || defaultValue.toString().equals("false", ignoreCase = true)
-
-        val actualDefaultValue = if (isBoolean) {
-            defaultValue.toString().toBoolean()
-        } else {
-            defaultValue.toString().toIntOrNull() ?: 0
-        }
-
-        if (valueStr.isNullOrEmpty()) {
-            return actualDefaultValue
-        }
-
-        // Return a value of the same type as our parsed default value
-        return if (isBoolean) {
-            valueStr == "1" || valueStr.equals("true", ignoreCase = true)
-        } else {
-            valueStr.toIntOrNull() ?: actualDefaultValue
-        }
+        return valueStr == "1" || valueStr.equals("true", ignoreCase = true)
     }
 
-    fun setSetting(contentResolver: ContentResolver, type: SettingType, key: String, value: Any, defaultValue: Any): Boolean {
-        val valueStr = when (value) {
-            is Boolean -> if (value) "1" else "0"
-            else -> value.toString()
-        }
+    /**
+     * Asynchronously sets the value of a setting and verifies that the write was successful.
+     */
+    suspend fun setSetting(contentResolver: ContentResolver, type: SettingType, key: String, value: Boolean): Boolean = withContext(Dispatchers.IO) {
+        val valueStr = if (value) "1" else "0"
 
         try {
             when (type) {
@@ -65,12 +51,11 @@ object SettingsManager {
                 SettingType.SYSTEM_PROPERTY -> setSystemProperty?.invoke(null, key, valueStr)
             }
         } catch (e: SecurityException) {
-            // If the set fails due to a security exception, we know it failed.
-            return false
+            return@withContext false
         }
 
         // After setting, read the value back to verify it was set correctly.
-        val readBackValue = getSetting(contentResolver, type, key, defaultValue)
-        return value == readBackValue
+        val readBackValue = getSetting(contentResolver, type, key)
+        return@withContext value == readBackValue
     }
 }
