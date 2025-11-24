@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 if (resolveInfo != null) {
                     val launcherPackage = resolveInfo.activityInfo.packageName
                     if (launcherPackage != null) {
-                        Runtime.getRuntime().exec("pkill $launcherPackage")
+                        Runtime.getRuntime().exec("am force-stop $launcherPackage")
                     }
                 }
                 true
