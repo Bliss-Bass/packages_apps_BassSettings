@@ -6,7 +6,7 @@
         <item name="colorOnSurface">@android:color/system_neutral1_900</item>
         
         <!-- Toolbar Color -->
-        <item name="colorPrimary">@android:color/system_neutral1_100</item>
+        <item name="colorPrimary">@android:color/system_neutral1_50</item>
         <item name="colorOnPrimary">@android:color/system_neutral1_900</item>
 
         <!-- Text Colors -->
