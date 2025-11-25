@@ -1,12 +1,12 @@
 package com.bass.settings.settings
 
+// This file contains the data models for the settings feature.
+
 data class Setting(
     val id: String,
     val name: String,
     val description: String?,
     val type: SettingType,
-    val defaultValue: Any,
-    var value: Any = defaultValue,
     val category: SettingCategory
 )
 
@@ -18,8 +18,8 @@ enum class SettingType {
 }
 
 enum class SettingCategory {
-    BLISS,
     LAUNCHER,
+    DISPLAY,
     WINDOWMANAGER,
     OTHER
 }

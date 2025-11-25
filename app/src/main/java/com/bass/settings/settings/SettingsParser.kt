@@ -4,28 +4,6 @@ import android.content.Context
 import com.bass.settings.R
 import org.xmlpull.v1.XmlPullParser
 
-data class Setting(
-    val id: String,
-    val name: String,
-    val description: String?,
-    val type: SettingType,
-    val category: SettingCategory
-)
-
-enum class SettingType {
-    SECURE,
-    SYSTEM,
-    GLOBAL,
-    SYSTEM_PROPERTY
-}
-
-enum class SettingCategory {
-    LAUNCHER,
-    DISPLAY,
-    WINDOWMANAGER,
-    OTHER
-}
-
 class SettingsParser(private val context: Context) {
 
     fun parse(): List<Setting> {
