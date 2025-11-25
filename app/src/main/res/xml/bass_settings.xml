@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
-    <category name="Bliss">
+    <category name="Launcher">
         <setting
             id="persist.bliss.disable_primary_taskbar"
             name="@string/setting_disable_primary_taskbar_name"
@@ -16,8 +16,6 @@
             name="@string/setting_disable_secondary_taskbar_name"
             description="@string/setting_disable_secondary_taskbar_description"
             type="system_property" />
-    </category>
-    <category name="Launcher">
         <setting
             id="persist.launcher3.pin_taskbar"
             name="@string/setting_pin_taskbar_name"
@@ -29,12 +27,7 @@
             description="@string/setting_is_in_desktop_mode_description"
             type="system_property" />
     </category>
-    <category name="WindowManager">
-        <setting
-            id="force_desktop_mode_on_external_displays"
-            name="@string/setting_force_desktop_mode_on_external_displays_name"
-            description="@string/setting_force_desktop_mode_on_external_displays_description"
-            type="global" />
+    <category name="Display">
         <setting
             id="persist.force.acms_displays"
             name="@string/setting_force_acms_displays_name"
@@ -44,16 +37,6 @@
             id="persist.force.dep_displays"
             name="@string/setting_disable_external_presentation_displays_name"
             description="@string/setting_disable_external_presentation_displays_description"
-            type="system_property" />
-        <setting
-            id="persist.force.freeform_windowing_mode"
-            name="@string/setting_force_freeform_windowing_mode_name"
-            description="@string/setting_force_freeform_windowing_mode_description"
-            type="system_property" />
-        <setting
-            id="persist.force.fullscreen_windowing_mode"
-            name="@string/setting_force_fullscreen_windowing_mode_name"
-            description="@string/setting_force_fullscreen_windowing_mode_description"
             type="system_property" />
         <setting
             id="persist.force.external_presentation_displays"
@@ -110,6 +93,23 @@
             name="@string/setting_force_rear_displays_name"
             description="@string/setting_force_rear_displays_description"
             type="system_property" />
+    </category>
+    <category name="WindowManager">
+        <setting
+            id="force_desktop_mode_on_external_displays"
+            name="@string/setting_force_desktop_mode_on_external_displays_name"
+            description="@string/setting_force_desktop_mode_on_external_displays_description"
+            type="global" />
+        <setting
+            id="persist.force.freeform_windowing_mode"
+            name="@string/setting_force_freeform_windowing_mode_name"
+            description="@string/setting_force_freeform_windowing_mode_description"
+            type="system_property" />
+        <setting
+            id="persist.force.fullscreen_windowing_mode"
+            name="@string/setting_force_fullscreen_windowing_mode_name"
+            description="@string/setting_force_fullscreen_windowing_mode_description"
+            type="system_property" />
         <setting
             id="persist.wm.debug.hide_navbar_window"
             name="@string/setting_hide_navbar_window_name"
@@ -129,6 +129,26 @@
             id="persist.force.desktop_first_on_default_display_for_testing"
             name="@string/setting_force_desktop_first_on_default_display_for_testing_name"
             description="@string/setting_force_desktop_first_on_default_display_for_testing_description"
+            type="system_property" />
+        <setting
+            id="persist.wm.debug.desktop_use_window_shadows"
+            name="@string/setting_desktop_use_window_shadows_name"
+            description="@string/setting_desktop_use_window_shadows_description"
+            type="system_property" />
+        <setting
+            id="persist.wm.debug.desktop_use_window_shadows_focused_window"
+            name="@string/setting_desktop_use_window_shadows_focused_window_name"
+            description="@string/setting_desktop_use_window_shadows_focused_window_description"
+            type="system_property" />
+        <setting
+            id="persist.wm.debug.desktop_use_rounded_corners"
+            name="@string/setting_desktop_use_rounded_corners_name"
+            description="@string/setting_desktop_use_rounded_corners_description"
+            type="system_property" />
+        <setting
+            id="persist.wm.debug.desktop_veiled_resizing"
+            name="@string/setting_desktop_veiled_resizing_name"
+            description="@string/setting_desktop_veiled_resizing_description"
             type="system_property" />
     </category>
     <category name="Other">

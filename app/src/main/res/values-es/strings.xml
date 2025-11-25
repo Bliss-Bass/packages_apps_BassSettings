@@ -59,6 +59,14 @@
     <string name="setting_desktop_mode_enforce_device_restrictions_description">Aplica las restricciones del dispositivo en el modo de escritorio.</string>
     <string name="setting_force_desktop_first_on_default_display_for_testing_name">Forzar Escritorio Primero en Pantalla Predeterminada para Pruebas</string>
     <string name="setting_force_desktop_first_on_default_display_for_testing_description">Fuerza que el modo de escritorio esté activado por defecto para pruebas.</string>
+    <string name="setting_desktop_use_window_shadows_name">Sombras de Ventana de Escritorio</string>
+    <string name="setting_desktop_use_window_shadows_description">Usa sombras de ventana en el modo de escritorio.</string>
+    <string name="setting_desktop_use_window_shadows_focused_window_name">Sombras de Ventana Enfocada</string>
+    <string name="setting_desktop_use_window_shadows_focused_window_description">Usa sombras de ventana para la ventana enfocada en el modo de escritorio.</string>
+    <string name="setting_desktop_use_rounded_corners_name">Esquinas Redondeadas de Escritorio</string>
+    <string name="setting_desktop_use_rounded_corners_description">Usa esquinas redondeadas para las ventanas en el modo de escritorio.</string>
+    <string name="setting_desktop_veiled_resizing_name">Redimensionamiento Velado de Escritorio</string>
+    <string name="setting_desktop_veiled_resizing_description">Usa el redimensionamiento velado para las ventanas en el modo de escritorio.</string>
 
     <!-- Other Settings -->
     <string name="setting_secure_overlay_settings_name">Ajustes de Superposición Segura</string>

@@ -63,6 +63,14 @@
     <string name="setting_desktop_mode_enforce_device_restrictions_description">Enforces device restrictions in desktop mode.</string>
     <string name="setting_force_desktop_first_on_default_display_for_testing_name">Force Desktop First On Default Display For Testing</string>
     <string name="setting_force_desktop_first_on_default_display_for_testing_description">Forces desktop mode to be on by default for testing.</string>
+    <string name="setting_desktop_use_window_shadows_name">Desktop Window Shadows</string>
+    <string name="setting_desktop_use_window_shadows_description">Use window shadows in desktop mode.</string>
+    <string name="setting_desktop_use_window_shadows_focused_window_name">Focused Window Shadows</string>
+    <string name="setting_desktop_use_window_shadows_focused_window_description">Use window shadows for the focused window in desktop mode.</string>
+    <string name="setting_desktop_use_rounded_corners_name">Desktop Rounded Corners</string>
+    <string name="setting_desktop_use_rounded_corners_description">Use rounded corners for windows in desktop mode.</string>
+    <string name="setting_desktop_veiled_resizing_name">Desktop Veiled Resizing</string>
+    <string name="setting_desktop_veiled_resizing_description">Use veiled resizing for windows in desktop mode.</string>
 
     <!-- Other Settings -->
     <string name="setting_secure_overlay_settings_name">Secure Overlay Settings</string>
