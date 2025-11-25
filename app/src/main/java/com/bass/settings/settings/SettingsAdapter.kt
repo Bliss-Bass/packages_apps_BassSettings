@@ -18,7 +18,7 @@ class SettingsAdapter(
     private val onSettingClicked: (SettingItem, Boolean) -> Unit
 ) : ListAdapter<DisplayableItem, RecyclerView.ViewHolder>(SettingDiffCallback()) {
 
-    override fun getItemViewType(position: Int):
+    override fun getItemViewType(position: Int): Int {
         return when (getItem(position)) {
             is CategoryItem -> VIEW_TYPE_CATEGORY
             is SettingItem -> VIEW_TYPE_SETTING
@@ -67,25 +67,24 @@ class SettingsAdapter(
             nameTextView.text = item.setting.name
             descriptionTextView.text = item.setting.description
 
-            // Show/hide the progress bar and switch based on the updating state
             if (item.isUpdating) {
-                switchWidget.visibility = View.GONE
+                switchWidget.visibility = View.INVISIBLE
                 progressBar.visibility = View.VISIBLE
             } else {
                 switchWidget.visibility = View.VISIBLE
                 progressBar.visibility = View.GONE
             }
             
-            // Set the switch state without triggering the listener
             switchWidget.setOnCheckedChangeListener(null)
             switchWidget.isChecked = item.value
             switchWidget.setOnCheckedChangeListener { _, isChecked ->
                 onSettingClicked(item, isChecked)
             }
 
-            // Also handle clicks on the main item view
             itemView.setOnClickListener {
-                switchWidget.toggle()
+                if (!item.isUpdating) { // Prevent toggling while an update is in progress
+                    switchWidget.toggle()
+                }
             }
         }
     }
@@ -97,7 +96,6 @@ class SettingDiffCallback : DiffUtil.ItemCallback<DisplayableItem>() {
     }
 
     override fun areContentsTheSame(oldItem: DisplayableItem, newItem: DisplayableItem): Boolean {
-        // The `SettingItem` data class will handle content comparison
         return oldItem == newItem
     }
 }
