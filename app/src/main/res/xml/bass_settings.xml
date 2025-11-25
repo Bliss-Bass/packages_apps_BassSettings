@@ -150,6 +150,21 @@
             name="@string/setting_desktop_veiled_resizing_name"
             description="@string/setting_desktop_veiled_resizing_description"
             type="system_property" />
+        <setting
+            id="persist.wm.debug.desktop_support_live_wallpaper"
+            name="@string/setting_desktop_support_live_wallpaper_name"
+            description="@string/setting_desktop_support_live_wallpaper_description"
+            type="system_property" />
+        <setting
+            id="persist.windowing_force_show_desktop_mode_education"
+            name="@string/setting_force_show_desktop_mode_education_name"
+            description="@string/setting_force_show_desktop_mode_education_description"
+            type="system_property" />
+        <setting
+            id="persist.wm.debug.desktop_transitions.drag_to_desktop"
+            name="@string/setting_desktop_transitions_drag_to_desktop_name"
+            description="@string/setting_desktop_transitions_drag_to_desktop_description"
+            type="system_property" />
     </category>
     <category name="Other">
         <setting

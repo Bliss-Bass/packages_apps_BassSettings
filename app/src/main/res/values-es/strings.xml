@@ -67,6 +67,12 @@
     <string name="setting_desktop_use_rounded_corners_description">Usa esquinas redondeadas para las ventanas en el modo de escritorio.</string>
     <string name="setting_desktop_veiled_resizing_name">Redimensionamiento Velado de Escritorio</string>
     <string name="setting_desktop_veiled_resizing_description">Usa el redimensionamiento velado para las ventanas en el modo de escritorio.</string>
+    <string name="setting_desktop_support_live_wallpaper_name">Fondo de Pantalla Animado en Escritorio</string>
+    <string name="setting_desktop_support_live_wallpaper_description">Permitir que los fondos de pantalla animados se muestren en el escritorio.</string>
+    <string name="setting_force_show_desktop_mode_education_name">Mostrar Introducción al Modo Escritorio</string>
+    <string name="setting_force_show_desktop_mode_education_description">Forzar la visualización del diálogo de introducción/educación del modo de escritorio.</string>
+    <string name="setting_desktop_transitions_drag_to_desktop_name">Transición de Arrastrar al Escritorio</string>
+    <string name="setting_desktop_transitions_drag_to_desktop_description">Activar la animación de transición al arrastrar una ventana al escritorio.</string>
 
     <!-- Other Settings -->
     <string name="setting_secure_overlay_settings_name">Ajustes de Superposición Segura</string>

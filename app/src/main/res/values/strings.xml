@@ -71,6 +71,12 @@
     <string name="setting_desktop_use_rounded_corners_description">Use rounded corners for windows in desktop mode.</string>
     <string name="setting_desktop_veiled_resizing_name">Desktop Veiled Resizing</string>
     <string name="setting_desktop_veiled_resizing_description">Use veiled resizing for windows in desktop mode.</string>
+    <string name="setting_desktop_support_live_wallpaper_name">Desktop Live Wallpaper</string>
+    <string name="setting_desktop_support_live_wallpaper_description">Allow live wallpapers to be shown on the desktop.</string>
+    <string name="setting_force_show_desktop_mode_education_name">Show Desktop Mode Education</string>
+    <string name="setting_force_show_desktop_mode_education_description">Forcefully show the desktop mode education/introduction dialog.</string>
+    <string name="setting_desktop_transitions_drag_to_desktop_name">Drag to Desktop Transition</string>
+    <string name="setting_desktop_transitions_drag_to_desktop_description">Enable the transition animation when dragging a window to the desktop.</string>
 
     <!-- Other Settings -->
     <string name="setting_secure_overlay_settings_name">Secure Overlay Settings</string>
