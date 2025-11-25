@@ -2,7 +2,7 @@
     <string name="app_name">Bass Settings</string>
     <string name="app_summary">Configure various options and UI elements</string>
     <string name="action_settings">Settings</string>
-    <string name="menu_settings">Settings</string>
+    <string name="menu_settings">Bass Settings</string>
 
     <!-- Restart Menu -->
     <string name="restart_systemui">Restart SystemUI</string>

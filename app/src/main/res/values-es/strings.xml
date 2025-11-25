@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Ajustes de Bass</string>
     <string name="action_settings">Ajustes</string>
-    <string name="menu_settings">Ajustes</string>
+    <string name="menu_settings">Ajustes de Bass</string>
 
     <!-- Bliss Settings -->
     <string name="setting_disable_primary_taskbar_name">Desactivar Barra de Tareas Principal</string>
